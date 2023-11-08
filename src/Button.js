@@ -1,16 +1,18 @@
- import React from 'react'
+ import React,{memo} from 'react'
  
- const Button = (props) => {
-      console.log(props)
-      const {children , clickAction ,data}=props;
+ const Button =memo((props) => {
+  console.log("rendering Button")
+   
+      const {children , clickAction}=props;
+     
       const handleClick=()=>{
    clickAction()
 }
    return (
 
-     <button onClick={handleClick}>{children} 
-     {data?.a?.b?.c}</button>
+     <button onClick={handleClick}>{children}</button>
+     
    )
- }
+ })
  
  export default Button
